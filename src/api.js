@@ -1,4 +1,8 @@
-const API = import.meta.env.VITE_API_URL || "";
+const API =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD
+    ? "https://softwaremanagementbackend.onrender.com"
+    : "");
 
 export class ApiError extends Error {
   constructor(message, status) {
